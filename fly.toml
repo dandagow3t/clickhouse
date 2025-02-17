@@ -1,4 +1,4 @@
-app = "listen-clickhouse"
+app = "listen-clickhouse-dangow3"
 primary_region = "waw"
 
 [build]

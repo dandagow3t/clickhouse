@@ -1,26 +1,33 @@
-app = "listen-clickhouse-dangow3"
-primary_region = "waw"
+# fly.toml app configuration file generated for listen-clickhouse-dangow3 on 2025-02-17T14:14:09+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'listen-clickhouse-dangow3'
+primary_region = 'waw'
 
 [build]
-dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [[mounts]]
-source = "clickhouse_data"
-destination = "/var/lib/clickhouse"
+  source = 'clickhouse_data'
+  destination = '/var/lib/clickhouse'
 
 [[services]]
-protocol = "tcp"
-internal_port = 9000
-[[services.ports]]
-port = 9000
+  protocol = 'tcp'
+  internal_port = 9000
+
+  [[services.ports]]
+    port = 9000
 
 [[services]]
-protocol = "tcp"
-internal_port = 8123
-[[services.ports]]
-port = 8123
+  protocol = 'tcp'
+  internal_port = 8123
+
+  [[services.ports]]
+    port = 8123
 
 [[vm]]
-memory = "2gb"
-cpu_kind = "shared"
-cpus = 2
+  memory = '2gb'
+  cpu_kind = 'shared'
+  cpus = 2
